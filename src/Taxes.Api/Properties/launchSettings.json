@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
@@ -11,25 +11,32 @@
   "profiles": {
     "Taxes.Api": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:3333;http://localhost:5289",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
         "RedisConnectionString": "localhost",
+        "ASPNETCORE_ENVIRONMENT": "Development",
         "BcbApiBaseUrl": "http://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
-      }
+      },
+      "applicationUrl": "https://localhost:3333;http://localhost:5289",
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
         "RedisConnectionString": "localhost",
+        "ASPNETCORE_ENVIRONMENT": "Development",
         "BcbApiBaseUrl": "http//api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
       }
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts": true,
+      "useSSL": true
     }
   }
 }
