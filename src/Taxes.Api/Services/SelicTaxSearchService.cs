@@ -32,7 +32,7 @@ namespace Taxes.Api.Services
 
             var cachedValue = await _db.StringGetAsync(key);
 
-            string content = cachedValue.ToString();
+            var content = cachedValue.ToString();
 
             if (string.IsNullOrEmpty(content))
             {
