@@ -1,4 +1,4 @@
 # Taxes Api
 
 ## 📖 Description
-Busca por data do valor de imposto SELIC determinado pelo Banco Central
+Busca por valor do imposto SELIC determinado pelo Banco Central (filtrado por data de início e fim)
