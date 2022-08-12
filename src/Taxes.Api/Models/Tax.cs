@@ -4,16 +4,16 @@ namespace Taxes.Api.Models
 {
     public class Tax
     {
-        public Tax(string date, string? valor, TaxType selic)
+        public Tax(string? date, string? valor, TaxType selic)
         {
-            Date = DateTime.Parse(string.Join("-", date.Replace("/","-").Split().Reverse()));
+            Date = string.IsNullOrEmpty(date) ? null : DateTime.Parse(string.Join("-", date.Replace("/", "-").Split().Reverse()));
             Value = Convert.ToDouble(valor);
             Type = TaxType.Selic;
         }
 
         public TaxType Type { get; set; }
         public double Value { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
     }
 
     public enum TaxType
