@@ -28,7 +28,7 @@
       "environmentVariables": {
         "RedisConnectionString": "localhost:6379",
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "BcbApiBaseUrl": "http//api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
+        "BcbApiBaseUrl": "http://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
       }
     },
     "Docker": {

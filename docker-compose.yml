@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: src/Taxes.Api/Dockerfile
     environment:
-      BcbApiBaseUrl: "http//api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
+      BcbApiBaseUrl: "http://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
     ports:
       - "3333:80"
     links:
