@@ -9,7 +9,7 @@ namespace Taxes.Api.Extensions
     public static class SelicFormatExtensions
     {
         public static string ToSelicQueryParamsString(this TaxSearchRequest request)
-            => $"?formato=json&dataInicial={request.StartAt.ToString("dd/MM/yyyy")}&dataFinal={request.StartAt.ToString("dd/MM/yyyy")}";
+            => $"?formato=json&dataInicial={request.StartAt.ToString("dd/MM/yyyy")}&dataFinal={request.EndAt.ToString("dd/MM/yyyy")}";
 
         public static string ToSelicCacheKey(this TaxSearchRequest request)
             => $"selic:{request.StartAt.ToString("dd/MM/yyyy")}:{request.EndAt.ToString("dd/MM/yyyy")}";
