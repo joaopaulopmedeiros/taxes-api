@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-using Taxes.Api.Models;
 using Taxes.Api.Requests;
-using Taxes.Api.Responses;
 using Taxes.Api.Services;
 
 namespace Taxes.Api.Controllers;

@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 
+using StackExchange.Redis;
+
 using Taxes.Api.Extensions;
 using Taxes.Api.Models;
 using Taxes.Api.Requests;
@@ -9,11 +11,13 @@ namespace Taxes.Api.Services
 {
     public class SelicTaxSearchService
     {
+        private readonly IDatabase _db;
         private readonly HttpClient _httpClient;
 
-        public SelicTaxSearchService(HttpClient httpClient)
+        public SelicTaxSearchService(IDatabase db, IHttpClientFactory httpClientFactory)
         {
-            _httpClient = httpClient;
+            _db = db;
+            _httpClient = httpClientFactory.CreateClient("Selic");
         }
 
         /// <summary>
@@ -24,13 +28,24 @@ namespace Taxes.Api.Services
         /// <returns></returns>
         public async Task<TaxSearchResponse?> SearchByAsync(TaxSearchRequest request)
         {
-            var queryParams = request.ToSelicQueryParamsString();
- 
-            var response = await _httpClient.GetAsync(queryParams);
+            var key = request.ToSelicCacheKey();
 
-            string content = await response.Content.ReadAsStringAsync();
+            var cachedValue = await _db.StringGetAsync(key);
 
-            if (!response.IsSuccessStatusCode) throw new Exception($"Unable to search selic tax on bcb. Response content: {content}");
+            string content = cachedValue.ToString();
+
+            if (string.IsNullOrEmpty(content))
+            {
+                var queryParams = request.ToSelicQueryParamsString();
+
+                var response = await _httpClient.GetAsync(queryParams);
+
+                response.EnsureSuccessStatusCode();
+
+                content = await response.Content.ReadAsStringAsync();
+
+                await _db.StringSetAsync(key, content);
+            }
 
             var taxes = JsonConvert.DeserializeObject<List<Selic>>(content);
 

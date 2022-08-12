@@ -1,11 +1,26 @@
 using System.Net.Http.Headers;
 
+using StackExchange.Redis;
+
 using Taxes.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddHttpClient<SelicTaxSearchService>(c =>
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost"));
+builder.Services.AddScoped<IDatabase>(s =>
+{
+    var db = s.GetService<IConnectionMultiplexer>()?.GetDatabase();
+
+    if (db == null)
+    {
+        throw new Exception("Unable to connect on redis");
+    }
+
+    return db;
+});
+builder.Services.AddTransient<SelicTaxSearchService>();
+builder.Services.AddHttpClient("Selic", c =>
 {
     c.BaseAddress = new Uri("http://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados");
     c.DefaultRequestHeaders.Add("User-Agent", "C# Automation");
