@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3ABF2073
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxes.Api.Unit.Tests", "tests\Taxes.Api.Unit.Tests\Taxes.Api.Unit.Tests.csproj", "{DF061486-379D-4041-9190-08810BB852FF}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1BD927AD-87F5-4F6B-B80B-DC2171BB3AA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{DF061486-379D-4041-9190-08810BB852FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF061486-379D-4041-9190-08810BB852FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF061486-379D-4041-9190-08810BB852FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD927AD-87F5-4F6B-B80B-DC2171BB3AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD927AD-87F5-4F6B-B80B-DC2171BB3AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD927AD-87F5-4F6B-B80B-DC2171BB3AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD927AD-87F5-4F6B-B80B-DC2171BB3AA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

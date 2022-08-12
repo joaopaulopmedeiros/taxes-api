@@ -14,7 +14,7 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "RedisConnectionString": "localhost",
+        "RedisConnectionString": "localhost:6379",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "BcbApiBaseUrl": "http://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
       },
@@ -26,7 +26,7 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "RedisConnectionString": "localhost",
+        "RedisConnectionString": "localhost:6379",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "BcbApiBaseUrl": "http//api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
       }

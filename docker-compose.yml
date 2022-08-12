@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  taxes.api:
+    image: ${DOCKER_REGISTRY-}taxes-api
+    depends_on:
+      - "redis_server"
+    build:
+      context: .
+      dockerfile: src/Taxes.Api/Dockerfile
+    environment:
+      BcbApiBaseUrl: "http//api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
+    ports:
+      - "3333:80"
+    links:
+      - "redis_server"
+  redis_server:
+        image: redis
+        container_name: Redis
+        ports:
+          - "6379:6379"

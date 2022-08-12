@@ -7,7 +7,7 @@ using Taxes.Api.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(Environment.GetEnvironmentVariable("RedisConnectionString") ?? "localhost"));
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("redis")));
 builder.Services.AddScoped<IDatabase>(s =>
 {
     var db = s.GetService<IConnectionMultiplexer>()?.GetDatabase();
