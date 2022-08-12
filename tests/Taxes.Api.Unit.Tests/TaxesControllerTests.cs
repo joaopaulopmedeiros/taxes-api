@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 using FluentAssertions;
 
@@ -19,7 +20,7 @@ namespace Taxes.Api.Tests;
 public class TaxesControllerTests
 {
     [Fact]
-    public async void WhenAnyItemsFoundMustReturn200StatusCode()
+    public async Task WhenAnyItemsFoundMustReturn200StatusCode()
     {
         //arrange
         var request = new TaxSearchRequest 
@@ -44,5 +45,30 @@ public class TaxesControllerTests
 
         //assert
         response.Should().BeOfType<OkObjectResult>();
+    }
+
+    [Fact]
+    public async Task WhenNoItemsFoundMustReturn204StatusCode()
+    {
+        //arrange
+        var request = new TaxSearchRequest
+        {
+            StartAt = DateTime.Now.AddYears(1),
+            EndAt = DateTime.Now.AddYears(2)
+        };
+
+        var mockService = new Mock<ITaxesSearchService>();
+
+        var emptyTaxes = new TaxSearchResponse();
+
+        mockService.Setup(s => s.SearchByAsync(request)).ReturnsAsync(emptyTaxes);
+
+        var sut = new TaxesController();
+
+        //act
+        var response = await sut.SearchSelicTaxAsync(request, mockService.Object);
+
+        //assert
+        response.Should().BeOfType<NoContentResult>();
     }
 }
