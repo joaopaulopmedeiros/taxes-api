@@ -9,13 +9,6 @@ namespace Taxes.Api.Controllers;
 [Route("[controller]")]
 public class TaxesController : ControllerBase
 {
-    private readonly ILogger<TaxesController> _logger;
-
-    public TaxesController(ILogger<TaxesController> logger)
-    {
-        _logger = logger;
-    }
-
     [HttpGet("Selic")]
     public async Task<IActionResult> SearchSelicTaxAsync
     (

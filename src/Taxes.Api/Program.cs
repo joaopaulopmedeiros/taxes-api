@@ -1,3 +1,5 @@
+using Serilog;
+
 using StackExchange.Redis;
 
 using Taxes.Api.Services;
@@ -22,6 +24,13 @@ builder.Services.AddHttpClient("Selic", c =>
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+var logger = new LoggerConfiguration()
+  .ReadFrom.Configuration(builder.Configuration)
+  .Enrich.FromLogContext()
+  .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+
 
 var app = builder.Build();
 
