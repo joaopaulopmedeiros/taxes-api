@@ -1,10 +1,12 @@
-﻿namespace Taxes.Api.Models
+﻿using System.Linq;
+
+namespace Taxes.Api.Models
 {
     public class Tax
     {
-        public Tax(DateTime date, string? valor, TaxType selic)
+        public Tax(string date, string? valor, TaxType selic)
         {
-            Date = date;
+            Date = DateTime.Parse(string.Join("-", date.Replace("/","-").Split().Reverse()));
             Value = Convert.ToDouble(valor);
             Type = TaxType.Selic;
         }
