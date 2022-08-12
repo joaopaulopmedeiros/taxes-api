@@ -11,7 +11,7 @@ services:
     environment:
       BcbApiBaseUrl: "http://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
     ports:
-      - "3333:80"
+      - "3333:443"
     links:
       - "redis_server"
   redis_server:
