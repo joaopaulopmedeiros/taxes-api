@@ -6,3 +6,7 @@ Busca por valor do imposto SELIC determinado pelo Banco Central (filtrado por da
 ## Techs
 - .NET 6.0
 - Redis
+
+# Results
+- Poc of low latency aspnet-core/redis service
+<img src="./docs/postman.png">
