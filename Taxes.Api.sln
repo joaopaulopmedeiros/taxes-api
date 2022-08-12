@@ -1,23 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9ECBCD6D-0128-4818-B304-57F302606D7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxes.Api", "src\Taxes.Api\Taxes.Api.csproj", "{1D2D261B-ADC3-421D-AEA2-986C4DFC272B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxes.Api", "src\Taxes.Api\Taxes.Api.csproj", "{1D2D261B-ADC3-421D-AEA2-986C4DFC272B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3ABF2073-5541-4883-B5BD-ED2C5C2776AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxes.Api.Tests", "tests\Taxes.Api.Tests\Taxes.Api.Tests.csproj", "{DF061486-379D-4041-9190-08810BB852FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxes.Api.Unit.Tests", "tests\Taxes.Api.Unit.Tests\Taxes.Api.Unit.Tests.csproj", "{DF061486-379D-4041-9190-08810BB852FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1D2D261B-ADC3-421D-AEA2-986C4DFC272B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -29,8 +26,14 @@ Global
 		{DF061486-379D-4041-9190-08810BB852FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF061486-379D-4041-9190-08810BB852FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1D2D261B-ADC3-421D-AEA2-986C4DFC272B} = {9ECBCD6D-0128-4818-B304-57F302606D7F}
 		{DF061486-379D-4041-9190-08810BB852FF} = {3ABF2073-5541-4883-B5BD-ED2C5C2776AB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55694EFE-F41B-421A-81DC-C0FF95E724D0}
 	EndGlobalSection
 EndGlobal
