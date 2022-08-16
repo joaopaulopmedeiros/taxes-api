@@ -1,7 +1,10 @@
 # Taxes Api
 
 ## 📖 Description
-Busca por valor do imposto SELIC determinado pelo Banco Central (filtrado por data de início e fim).
+Simple and optimized search by SELIC taxes.
+
+## Architecture Review
+<img src="./docs/diagram.png">
 
 ## Techs
 - .NET 6.0
@@ -11,5 +14,4 @@ Busca por valor do imposto SELIC determinado pelo Banco Central (filtrado por da
 `docker-compose run`
 
 # Results
-- Poc of low latency aspnet-core/redis service
 <img src="./docs/postman.png">
