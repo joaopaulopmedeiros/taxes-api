@@ -14,11 +14,10 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "RedisConnectionString": "localhost:6379",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "BcbApiBaseUrl": "http://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
       },
-      "applicationUrl": "https://localhost:3333;http://localhost:5289",
+      "applicationUrl": "https://localhost:5000;http://localhost:5289",
       "dotnetRunMessages": true
     },
     "IIS Express": {
@@ -26,7 +25,6 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "RedisConnectionString": "localhost:6379",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "BcbApiBaseUrl": "http://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados"
       }
