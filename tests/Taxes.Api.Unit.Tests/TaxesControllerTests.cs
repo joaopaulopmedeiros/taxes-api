@@ -29,7 +29,7 @@ public class TaxesControllerTests
             EndAt = DateTime.Now.AddDays(2) 
         };
 
-        var mockService = new Mock<ITaxesSearchService>();
+        var mockService = new Mock<ITaxSearchService>();
 
         var taxes = new TaxSearchResponse
         {
@@ -57,7 +57,7 @@ public class TaxesControllerTests
             EndAt = DateTime.Now.AddYears(2)
         };
 
-        var mockService = new Mock<ITaxesSearchService>();
+        var mockService = new Mock<ITaxSearchService>();
 
         var emptyTaxes = new TaxSearchResponse();
 

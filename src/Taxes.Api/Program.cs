@@ -18,7 +18,7 @@ builder.Services.AddScoped<IDatabase>(s =>
     if (db == null) throw new NullReferenceException("Unable to connect on redis. No database instance found.");
     return db;
 });
-builder.Services.AddTransient<ITaxesSearchService, SelicTaxSearchService>();
+builder.Services.AddTransient<ITaxSearchService, SelicTaxSearchService>();
 builder.Services.AddHttpClient("Selic", c =>
 {
     var uri = Environment.GetEnvironmentVariable("BcbApiBaseUrl");

@@ -3,7 +3,7 @@ using Taxes.Api.Responses;
 
 namespace Taxes.Api.Services
 {
-    public interface ITaxesSearchService
+    public interface ITaxSearchService
     {
         Task<TaxSearchResponse?> SearchByAsync(TaxSearchRequest request);
     }

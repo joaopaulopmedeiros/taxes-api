@@ -13,7 +13,7 @@ public class TaxesController : ControllerBase
     public async Task<IActionResult> SearchSelicTaxAsync
     (
         [FromQuery] TaxSearchRequest request, 
-        [FromServices] ITaxesSearchService service
+        [FromServices] ITaxSearchService service
     )
     {
         var result = await service.SearchByAsync(request);

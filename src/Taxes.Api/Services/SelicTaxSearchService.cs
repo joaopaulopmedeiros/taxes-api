@@ -9,7 +9,7 @@ using Taxes.Api.Responses;
 
 namespace Taxes.Api.Services
 {
-    public class SelicTaxSearchService : ITaxesSearchService
+    public class SelicTaxSearchService : ITaxSearchService
     {
         private readonly IDatabase _db;
         private readonly HttpClient _httpClient;
