@@ -3,7 +3,7 @@
 ## 📖 Description
 Simple and optimized search by SELIC taxes.
 
-## Architecture Review
+## Architecture Overview
 <img src="./docs/diagram.png">
 
 ## Techs
